@@ -1,0 +1,16 @@
+FROM ubuntu:20.04
+
+# update mengenai advance packagin tool di ubuntu/distro linux
+# dengan menggunakan base image ubuntu kita dapat menginstall sql server beserta aplikasi di image yang akan kita buat nantinya(sesuai os linux ubuntu)
+RUN apt-get update && \
+    apt-get -y upgrade && \
+    apt-get -y install wget
+#install MySQL Server
+RUN apt-get install -y wget mysql-server
+
+#install golang
+RUN wget -O -c https://dl.google.com/go/go1.17.1.linux-amd64.tar.gz && \
+    tar -xvf -c -C /usr/local
+
+EXPOSE 3036
+EXPOSE 8000

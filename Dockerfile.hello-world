@@ -1,0 +1,10 @@
+FROM golang:bullseye
+
+WORKDIR /app
+
+COPY . .
+
+RUN go build 1.hello-world
+
+CMD [ "./hello" ]
+
